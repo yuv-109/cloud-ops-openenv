@@ -1,13 +1,16 @@
-version: "1.0"
-name: "Cloud-Ops OpenEnv"
-description: "SRE incident response environment for autonomous agents."
+version: "1.0.0"
+name: "cloud-ops-openenv"
+description: "SRE incident response environment for evaluating AI agents."
+entrypoint: "main:app"
+port: 7860
+
 tasks:
   - id: "task_1"
     name: "Service Recovery"
-    difficulty: "easy"
+    difficulty: "Easy"
   - id: "task_2"
     name: "Memory Mitigation"
-    difficulty: "medium"
+    difficulty: "Medium"
   - id: "task_3"
     name: "Database Deadlock Fix"
-    difficulty: "hard"
+    difficulty: "Hard"

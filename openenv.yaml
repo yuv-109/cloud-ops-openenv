@@ -1,0 +1,13 @@
+version: "1.0"
+name: "Cloud-Ops OpenEnv"
+description: "SRE incident response environment for autonomous agents."
+tasks:
+  - id: "task_1"
+    name: "Service Recovery"
+    difficulty: "easy"
+  - id: "task_2"
+    name: "Memory Mitigation"
+    difficulty: "medium"
+  - id: "task_3"
+    name: "Database Deadlock Fix"
+    difficulty: "hard"

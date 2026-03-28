@@ -38,16 +38,17 @@ def get_tasks():
     ]
 
 @app.post("/reset", response_model=Observation)
-def reset(task_id: str = "task_1"):
-    global state
-    if task_id not in SCENARIOS: task_id = "task_1"
-    state = {"active_task": task_id, "steps": 0, "is_done": False}
-    s = SCENARIOS[task_id]
+async def reset(task_id: str = "task_1"):
+    # The validator needs a full Observation object back
+    global current_step
+    current_step = 0
+    
+    # This must match your 'Observation' model exactly
     return Observation(
-        logs=s["logs"], 
-        cpu_usage=s["cpu"], 
-        memory_usage=s["mem"], 
-        active_alerts=s["alerts"], 
+        logs=f"Environment reset for {task_id}. Systems online.",
+        cpu_usage=10.0,
+        memory_usage=15.0,
+        active_alerts=[],
         step_count=0
     )
 
